@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecurePass</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🔐 SecurePass</h1>
+
+            <p class="subtitle">
+                Secure Password Generator & Strength Analyzer
+            </p>
+
+            <!-- Password Display -->
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Your password will appear here"
+                    readonly
+                >
+
+                <button id="showBtn" onclick="togglePassword()">
+                    👁
+                </button>
+
+                <button onclick="copyPassword()">
+                    📋
+                </button>
+
+            </div>
+
+            <!-- Strength -->
+
+            <div class="strength-section">
+
+                <div class="strength-text">
+                    Strength:
+                    <span id="strength">-</span>
+                </div>
+
+                <div class="strength-bar">
+                    <div id="strengthBar"></div>
+                </div>
+
+            </div>
+
+            <!-- Password Length -->
+
+            <div class="option">
+
+                <div class="label-row">
+                    <label>Password Length</label>
+                    <span id="lengthValue">16</span>
+                </div>
+
+                <input
+                    type="range"
+                    id="length"
+                    min="8"
+                    max="64"
+                    value="16"
+                    oninput="updateLength()"
+                >
+
+            </div>
+
+            <!-- Options -->
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox" id="uppercase" checked>
+                    Uppercase Letters (A-Z)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="lowercase" checked>
+                    Lowercase Letters (a-z)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="numbers" checked>
+                    Numbers (0-9)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="symbols" checked>
+                    Special Characters
+                </label>
+
+            </div>
+
+            <!-- Generate -->
+
+            <button class="generate-btn" onclick="generatePassword()">
+                Generate Password
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
