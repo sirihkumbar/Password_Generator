@@ -6,4 +6,8 @@ Password-Generator/
 ├── README.md
 ├── requirements.txt 
 └── .gitignore.
-Technologies Used Python Random Module String Module.
+
+Technologies Used 
+Python 
+Random Module 
+String Module.
